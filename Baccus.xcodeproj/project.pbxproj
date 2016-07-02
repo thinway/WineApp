@@ -11,6 +11,7 @@
 		329579F51D282068002F3423 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 329579F41D282068002F3423 /* AppDelegate.m */; };
 		329579F71D282068002F3423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329579F61D282068002F3423 /* Assets.xcassets */; };
 		329579FA1D282068002F3423 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329579F81D282068002F3423 /* LaunchScreen.storyboard */; };
+		32957A031D284126002F3423 /* FDCWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32957A021D284126002F3423 /* FDCWineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		329579F61D282068002F3423 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329579F91D282068002F3423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		329579FB1D282068002F3423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32957A011D284126002F3423 /* FDCWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWineModel.h; sourceTree = "<group>"; };
+		32957A021D284126002F3423 /* FDCWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWineModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			children = (
 				329579F31D282068002F3423 /* AppDelegate.h */,
 				329579F41D282068002F3423 /* AppDelegate.m */,
+				32957A041D28412C002F3423 /* Models */,
 				329579F61D282068002F3423 /* Assets.xcassets */,
 				329579F81D282068002F3423 /* LaunchScreen.storyboard */,
 				329579FB1D282068002F3423 /* Info.plist */,
@@ -69,6 +73,15 @@
 				329579F11D282068002F3423 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32957A041D28412C002F3423 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32957A011D284126002F3423 /* FDCWineModel.h */,
+				32957A021D284126002F3423 /* FDCWineModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329579F51D282068002F3423 /* AppDelegate.m in Sources */,
+				32957A031D284126002F3423 /* FDCWineModel.m in Sources */,
 				329579F21D282068002F3423 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
