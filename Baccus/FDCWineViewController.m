@@ -48,6 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 /*
 #pragma mark - Navigation
 
@@ -57,5 +58,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Actions
+
+-(IBAction)displayWeb:(id)sender
+{
+    NSLog(@"Go to %@", self.model.wineCompanyWeb);
+}
 
 @end
