@@ -19,14 +19,31 @@
 // usuario.
 // Más info: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html
 
-@property (strong, nonatomic)   NSString    *type;
-@property (strong, nonatomic)   UIImage     *photo; // representa una imagen pero no la muestra en pantalla. Recordemos que estamos en el modelo.
-@property (strong, nonatomic)   NSURL       *wineCompanyWeb;
-@property (strong, nonatomic)   NSString    *notes;
-@property (strong, nonatomic)   NSString    *origin;
-@property (nonatomic)           int         rating;
-@property (strong, nonatomic)   NSArray     *grapes;
 @property (strong, nonatomic)   NSString    *name;
 @property (strong, nonatomic)   NSString    *wineCompanyName;
+@property (strong, nonatomic)   NSString    *type;
+@property (strong, nonatomic)   NSString    *origin;
+@property (strong, nonatomic)   NSArray     *grapes;
+@property (strong, nonatomic)   NSURL       *wineCompanyWeb;
+@property (strong, nonatomic)   NSString    *notes;
+@property (nonatomic)           int         rating;
+@property (strong, nonatomic)   UIImage     *photo; // representa una imagen pero no la muestra en pantalla. Recordemos que estamos en el modelo.
+
+// Inicializador Designado
+-(id) initWithName: (NSString *) aName
+   wineCompanyName: (NSString *) aWineCompanyName
+              type: (NSString *) aType
+            origin: (NSString *) anOrigin
+            grapes: (NSArray *) arrayOfGrapes
+    wineCompanyWeb: (NSURL *) aURL
+             notes: (NSString *) aNotes
+            rating: (int) aRating
+             photo: (UIImage *) aPhoto;
+
+// Inicializadores de conveniencia
+-(id) initWithName: (NSString *) aName
+   wineCompanyName: (NSString *) aWineCompanyName
+              type: (NSString *) aType
+            origin: (NSString *) anOrigin;
 
 @end
