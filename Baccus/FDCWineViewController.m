@@ -40,6 +40,8 @@
 {
     // En estos métodos siempre llamamos a la superclase
     [super viewWillAppear:animated];
+    
+    [self syncModelWithView];
 }
 
 
@@ -65,5 +67,58 @@
 {
     NSLog(@"Go to %@", self.model.wineCompanyWeb);
 }
+
+#pragma mark - Utils
+
+-(void) syncModelWithView
+{
+    self.nameLabel.text = self.model.name;
+    self.typeLabel.text = self.model.type;
+    self.originLabel.text = self.model.origin;
+    self.notesLabel.text = self.model.notes;
+    self.wineryLabel.text = self.model.wineCompanyName;
+    self.photoView.image = self.model.photo;
+    self.grapesLabel.text = [self arrayToString: self.model.grapes];
+    
+    [self displayRating: self.model.rating];
+}
+
+-(void) displayRating: (int) aRating
+{
+    [self clearRatings];
+    
+    UIImage *glass = [UIImage imageNamed:@"splitView_score_glass"];
+    
+    for(int i = 0; i < aRating; i++) {
+        [[self.ratingViews objectAtIndex:i] setImage: glass];
+    }
+}
+
+-(void) clearRatings
+{
+    for(UIImageView *imgView in self.ratingViews) {
+        imgView.image = nil;
+    }
+}
+
+-(NSString *) arrayToString: (NSArray *) anArray
+{
+    NSString *repr = nil;
+    
+    if ([anArray count] == 1) {
+        repr = [@"100% " stringByAppendingString:[anArray lastObject]];
+    }else{
+        repr = [[anArray componentsJoinedByString:@", "] stringByAppendingString:@"."];
+    }
+    
+    return repr;
+}
+
+
+
+
+
+
+
 
 @end

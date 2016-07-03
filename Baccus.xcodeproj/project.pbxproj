@@ -14,6 +14,8 @@
 		32957A031D284126002F3423 /* FDCWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32957A021D284126002F3423 /* FDCWineModel.m */; };
 		32957A081D28F7D5002F3423 /* FDCWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32957A061D28F7D5002F3423 /* FDCWineViewController.m */; };
 		32957A091D28F7D5002F3423 /* FDCWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32957A071D28F7D5002F3423 /* FDCWineViewController.xib */; };
+		32957A0C1D29923F002F3423 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */; };
+		32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32957A0E1D2992BF002F3423 /* bembibre.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		32957A051D28F7D5002F3423 /* FDCWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWineViewController.h; sourceTree = "<group>"; };
 		32957A061D28F7D5002F3423 /* FDCWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWineViewController.m; sourceTree = "<group>"; };
 		32957A071D28F7D5002F3423 /* FDCWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDCWineViewController.xib; sourceTree = "<group>"; };
+		32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
+		32957A0E1D2992BF002F3423 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		329579EF1D282068002F3423 /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
+				32957A0D1D299246002F3423 /* Resources */,
 				32957A0A1D28F7E4002F3423 /* Controllers */,
 				329579F31D282068002F3423 /* AppDelegate.h */,
 				329579F41D282068002F3423 /* AppDelegate.m */,
@@ -98,6 +103,15 @@
 				32957A071D28F7D5002F3423 /* FDCWineViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		32957A0D1D299246002F3423 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32957A0E1D2992BF002F3423 /* bembibre.jpg */,
+				32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32957A0C1D29923F002F3423 /* splitView_score_glass@2x.png in Resources */,
 				32957A091D28F7D5002F3423 /* FDCWineViewController.xib in Resources */,
 				329579F71D282068002F3423 /* Assets.xcassets in Resources */,
+				32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */,
 				329579FA1D282068002F3423 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

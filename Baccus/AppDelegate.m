@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FDCWineModel.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //Crea una windows que ocupe toda la pantalla
-    // Override point for customization after application launch.
+    // Creamos un modelo
+    FDCWin
+    
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
     // Añadido para que se vea la pantalla naranja
