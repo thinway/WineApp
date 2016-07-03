@@ -8,10 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FDCWineModel.h"
-
-@interface AppDelegate ()
-
-@end
+#import "FDCWineViewController.h"
 
 @implementation AppDelegate
 
@@ -19,13 +16,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //Crea una windows que ocupe toda la pantalla
     // Creamos un modelo
-    FDCWin
+    FDCWineModel *tintorro = [FDCWineModel wineWithName:@"Bembibre"
+                                        wineCompanyName:@"Dominio de Tares"
+                                                   type:@"Tinto"
+                                                 origin:@"El Bierzo"
+                                                 grapes:@[@"Mencía"]
+                                         wineCompanyWeb:[NSURL URLWithString:@"http://www.dominiodetares.com/portfolio/bembibre/"]
+                                                  notes:@"Este vino muestra toda la complejidad y al elegancia de la variedad Mencía. En fase visual luce un color rojo picota muy cubierto con tonalidades violáceasen el menisco. En nariz aparecen recuerdos frutales muy intensos de frutas rojas (frambuesa, cereza) y una potente ciruela negra, así como tonos florales de la gama de las rosas y violetas, vegetales muy elegantes y complementarios, hojarasca verde, tabaco y maderas aromáticas (sándalo) que le brindan un toque ciertamente perfumado"
+                                                 rating:5
+                                                  photo:[UIImage imageNamed:@"bembibre.jpg"]];
+    
+    // Creamos el controlador
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    
+    // Lo asignamos como controlador raíz
+    self.window.rootViewController = wineVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
     // Añadido para que se vea la pantalla naranja
     // Visto en los comentarios del vídeo.
-    self.window.rootViewController = [UIViewController new];
+    // self.window.rootViewController = [UIViewController new];
     return YES;
 }
 

@@ -11,6 +11,7 @@
                 <outlet property="nameLabel" destination="xdq-pM-DhN" id="8fG-yM-1Hf"/>
                 <outlet property="notesLabel" destination="Uly-mm-CHk" id="huF-Hd-jPc"/>
                 <outlet property="originLabel" destination="m74-b0-SWl" id="nTm-0l-ED0"/>
+                <outlet property="photoView" destination="55L-39-UMA" id="YIC-46-VFF"/>
                 <outlet property="typeLabel" destination="lpt-p7-pc3" id="4WT-8k-OMH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wineryLabel" destination="uoh-qO-96u" id="QMm-HV-G8O"/>
@@ -26,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="55L-39-UMA">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="55L-39-UMA">
                     <rect key="frame" x="8" y="34" width="382" height="596"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
