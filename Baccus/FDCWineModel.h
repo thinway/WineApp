@@ -29,6 +29,22 @@
 @property (nonatomic)           int         rating;
 @property (strong, nonatomic)   UIImage     *photo; // representa una imagen pero no la muestra en pantalla. Recordemos que estamos en el modelo.
 
+// Constructores de conveniencia
++(id) wineWithName: (NSString *) aName
+   wineCompanyName: (NSString *) aWineCompanyName
+              type: (NSString *) aType
+            origin: (NSString *) anOrigin
+            grapes: (NSArray *) arrayOfGrapes
+    wineCompanyWeb: (NSURL *) aURL
+             notes: (NSString *) aNotes
+            rating: (int) aRating
+             photo: (UIImage *) aPhoto;
+
++(id) wineWithName: (NSString *) aName
+   wineCompanyName: (NSString *) aWineCompanyName
+              type: (NSString *) aType
+            origin: (NSString *) anOrigin;
+
 // Inicializador Designado
 -(id) initWithName: (NSString *) aName
    wineCompanyName: (NSString *) aWineCompanyName
