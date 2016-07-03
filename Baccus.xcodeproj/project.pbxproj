@@ -16,6 +16,8 @@
 		32957A091D28F7D5002F3423 /* FDCWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32957A071D28F7D5002F3423 /* FDCWineViewController.xib */; };
 		32957A0C1D29923F002F3423 /* splitView_score_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */; };
 		32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32957A0E1D2992BF002F3423 /* bembibre.jpg */; };
+		32957A131D29995C002F3423 /* FDCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32957A111D29995C002F3423 /* FDCWebViewController.m */; };
+		32957A141D29995C002F3423 /* FDCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32957A121D29995C002F3423 /* FDCWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		32957A071D28F7D5002F3423 /* FDCWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDCWineViewController.xib; sourceTree = "<group>"; };
 		32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splitView_score_glass@2x.png"; sourceTree = "<group>"; };
 		32957A0E1D2992BF002F3423 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
+		32957A101D29995C002F3423 /* FDCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWebViewController.h; sourceTree = "<group>"; };
+		32957A111D29995C002F3423 /* FDCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWebViewController.m; sourceTree = "<group>"; };
+		32957A121D29995C002F3423 /* FDCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDCWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,9 @@
 				32957A051D28F7D5002F3423 /* FDCWineViewController.h */,
 				32957A061D28F7D5002F3423 /* FDCWineViewController.m */,
 				32957A071D28F7D5002F3423 /* FDCWineViewController.xib */,
+				32957A101D29995C002F3423 /* FDCWebViewController.h */,
+				32957A111D29995C002F3423 /* FDCWebViewController.m */,
+				32957A121D29995C002F3423 /* FDCWebViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32957A0C1D29923F002F3423 /* splitView_score_glass@2x.png in Resources */,
+				32957A141D29995C002F3423 /* FDCWebViewController.xib in Resources */,
 				32957A091D28F7D5002F3423 /* FDCWineViewController.xib in Resources */,
 				329579F71D282068002F3423 /* Assets.xcassets in Resources */,
 				32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */,
@@ -189,6 +198,7 @@
 				329579F51D282068002F3423 /* AppDelegate.m in Sources */,
 				32957A081D28F7D5002F3423 /* FDCWineViewController.m in Sources */,
 				32957A031D284126002F3423 /* FDCWineModel.m in Sources */,
+				32957A131D29995C002F3423 /* FDCWebViewController.m in Sources */,
 				329579F21D282068002F3423 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

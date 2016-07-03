@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FDCWineModel.h"
 #import "FDCWineViewController.h"
+#import "FDCWebViewController.h"
 
 @implementation AppDelegate
 
@@ -27,10 +28,11 @@
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
     // Creamos el controlador
-    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    // FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:tintorro];
     
     // Lo asignamos como controlador raíz
-    self.window.rootViewController = wineVC;
+    self.window.rootViewController = webVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
