@@ -7,6 +7,7 @@
 //
 
 #import "FDCWineViewController.h"
+#import "FDCWebViewController.h"
 
 @implementation FDCWineViewController
 
@@ -43,6 +44,14 @@
     [super viewWillAppear:animated];
     
     [self syncModelWithView];
+    
+    // Para que pinte la información del view controller debajo del navigation controller y no los superponga
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    // Esta configuración no puede ir en initWithNibName xq en ese momento todavía no se ha dibujado la vista y estaríamos mandando el mensaje a nil
+    // self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.5 green:0 blue:0.13 alpha:1];
+
 }
 
 
@@ -66,7 +75,13 @@
 
 -(IBAction)displayWeb:(id)sender
 {
-    NSLog(@"Go to %@", self.model.wineCompanyWeb);
+    //NSLog(@"Go to %@", self.model.wineCompanyWeb);
+    
+    // Crear un webVC
+    FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:self.model];
+    
+    // Hacemos un push
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - Utils

@@ -29,14 +29,17 @@
     
     // Creamos los controladores
     FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
-    FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:tintorro];
+    // FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:tintorro];
     
-    // Creamos el combinador
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    tabVC.viewControllers = @[wineVC, webVC];
+    // Creamos el combinador UITabController
+    // UITabBarController *tabVC = [[UITabBarController alloc] init];
+    // tabVC.viewControllers = @[wineVC, webVC];
+    
+    // Creamos el UINavigationController
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
     // Asignamos el combinador como controlador raíz
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
