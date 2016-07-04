@@ -27,12 +27,16 @@
                                                  rating:5
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
-    // Creamos el controlador
-    // FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    // Creamos los controladores
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
     FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:tintorro];
     
-    // Lo asignamos como controlador raíz
-    self.window.rootViewController = webVC;
+    // Creamos el combinador
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[wineVC, webVC];
+    
+    // Asignamos el combinador como controlador raíz
+    self.window.rootViewController = tabVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
