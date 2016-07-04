@@ -18,6 +18,8 @@
 		32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32957A0E1D2992BF002F3423 /* bembibre.jpg */; };
 		32957A131D29995C002F3423 /* FDCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32957A111D29995C002F3423 /* FDCWebViewController.m */; };
 		32957A141D29995C002F3423 /* FDCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32957A121D29995C002F3423 /* FDCWebViewController.xib */; };
+		32957A161D2B0E29002F3423 /* zarate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32957A151D2B0E29002F3423 /* zarate.jpg */; };
+		32957A181D2B0F39002F3423 /* comtes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32957A171D2B0F39002F3423 /* comtes.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		32957A101D29995C002F3423 /* FDCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWebViewController.h; sourceTree = "<group>"; };
 		32957A111D29995C002F3423 /* FDCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWebViewController.m; sourceTree = "<group>"; };
 		32957A121D29995C002F3423 /* FDCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FDCWebViewController.xib; sourceTree = "<group>"; };
+		32957A151D2B0E29002F3423 /* zarate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zarate.jpg; sourceTree = "<group>"; };
+		32957A171D2B0F39002F3423 /* comtes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtes.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			children = (
 				32957A0E1D2992BF002F3423 /* bembibre.jpg */,
 				32957A0B1D29923F002F3423 /* splitView_score_glass@2x.png */,
+				32957A151D2B0E29002F3423 /* zarate.jpg */,
+				32957A171D2B0F39002F3423 /* comtes.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -180,8 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32957A0C1D29923F002F3423 /* splitView_score_glass@2x.png in Resources */,
+				32957A161D2B0E29002F3423 /* zarate.jpg in Resources */,
 				32957A141D29995C002F3423 /* FDCWebViewController.xib in Resources */,
 				32957A091D28F7D5002F3423 /* FDCWineViewController.xib in Resources */,
+				32957A181D2B0F39002F3423 /* comtes.jpg in Resources */,
 				329579F71D282068002F3423 /* Assets.xcassets in Resources */,
 				32957A0F1D2992BF002F3423 /* bembibre.jpg in Resources */,
 				329579FA1D282068002F3423 /* LaunchScreen.storyboard in Resources */,

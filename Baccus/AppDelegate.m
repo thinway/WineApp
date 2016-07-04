@@ -16,7 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //Crea una windows que ocupe toda la pantalla
-    // Creamos un modelo
+    
+    // Creamos varios modelos
     FDCWineModel *tintorro = [FDCWineModel wineWithName:@"Bembibre"
                                         wineCompanyName:@"Dominio de Tares"
                                                    type:@"Tinto"
@@ -27,19 +28,43 @@
                                                  rating:5
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
+    FDCWineModel *albarino = [FDCWineModel wineWithName:@"Zárate"
+                                        wineCompanyName:@"Zárate"
+                                                   type:@"Blanco"
+                                                 origin:@"Rías Bajas"
+                                                 grapes:@[@"Albariño"]
+                                         wineCompanyWeb:[NSURL URLWithString:@"http://bodegas-zarate.com/productos/vinos/albarino-zarate/"]
+                                                  notes:@"El albariño Zárate es un vino blanco monovarietal que pertenece a la Denominación de Origen Rías Baixas. Considerado por la crítica especializada como uno de los grandes vinos blancos del mundo, el albariño ya es todo un mito."
+                                                 rating:4
+                                                  photo:[UIImage imageNamed:@"zarate.jpg"]];
+    
+    FDCWineModel *champagne = [FDCWineModel wineWithName:@"Comtes de Champagne"
+                                        wineCompanyName:@"Champagne Taittinger"
+                                                   type:@"Otro"
+                                                 origin:@"Champagne"
+                                                 grapes:@[@"Chardonnay"]
+                                         wineCompanyWeb:[NSURL URLWithString:@"http://www.taittinger.com/"]
+                                                  notes:@"Elaborado en las bodegas de la antigua abadía de San-Nicasio en Reims (siglo XVIII), Taittinger Comtes de Champagne Blanc de Blancs disfruta hasta su apogeo de una sucesión deatentos cuidados, y sólo se elabora en los años que reúnen las condiciones excepcionales que conforman toda su rareza: La cosecha Comtes de Champagne Blanc de Blancs está elaborada al 100% a partir de Chardonnays de los más grandes viñedos de las prestigiosa Côte des Blancs. Sólo se produce cuando la vendimia resulta ser de una excepcional calidad y digna de merecer una añada. Tan sólo se utiliza el vino de primer prensado – la Cuvée – aval absoluto de finura. El 5% de los vinos que entran en su composición han envejecido 4 meses en barricas de roble nuevas (un tercio de las cuales se renueva cada año), lo que realza las cualidades intrínsecas del ensamblaje final. Sólo después de una lenta y paciente crianza de varios años en las Crayères de Saint-Nicaise, esta cosecha de excepción ve la luz. A pesar de una climatología sin excesos, el año 2004 fue exuberante. El invierno , fresco pero sin períodos de frío intenso. La primavera, marcada por una pluvio- sidad débil, muy agradable. La floración, muy escalonada, arranco a mediados de junio con temperaturas frescas. Poco soleado y fresco, el verano se muestra seco hasta mediados de agosto donde llega un período de lluvias benefactoras. La vuelta del sol y del calor a principios de septiembre favoreció la maduración. La vendimia arranca a partir del 20 de septiembre con chardonnays y resulta ser de las más abundantes de la historia de la Champaña. Muy sana y de un excelente nivel cualitativo. Los chardonnays tienen una calidad sobresaliente: equilibrados, complejos, largos, frescos y tónicos. Los Pinots Noirs son elegantes y estructurados."
+                                                 rating:4
+                                                  photo:[UIImage imageNamed:@"comtes.jpg"]];
+    
     // Creamos los controladores
-    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    FDCWineViewController *tintoVC = [[FDCWineViewController alloc] initWithModel:tintorro];
+    FDCWineViewController *blancoVC = [[FDCWineViewController alloc] initWithModel:albarino];
+    FDCWineViewController *otroVC = [[FDCWineViewController alloc] initWithModel:champagne];
     // FDCWebViewController *webVC = [[FDCWebViewController alloc] initWithModel:tintorro];
     
-    // Creamos el combinador UITabController
-    // UITabBarController *tabVC = [[UITabBarController alloc] init];
-    // tabVC.viewControllers = @[wineVC, webVC];
-    
     // Creamos el UINavigationController
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    UINavigationController *tintoNavC = [[UINavigationController alloc] initWithRootViewController:tintoVC];
+    UINavigationController *blancoNavC = [[UINavigationController alloc] initWithRootViewController:blancoVC];
+    UINavigationController *otroNavC = [[UINavigationController alloc] initWithRootViewController:otroVC];
+    
+    // Creamos el combinador UITabController
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[tintoNavC, blancoNavC, otroNavC];
     
     // Asignamos el combinador como controlador raíz
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = tabVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
