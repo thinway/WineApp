@@ -75,17 +75,17 @@
     return self;
 }
 
--(FDCWineModel *) redWineAtIndex: (int) index
+-(FDCWineModel *) redWineAtIndex: (NSInteger) index
 {
     return [self.redWines objectAtIndex:index];
 }
 
--(FDCWineModel *) whiteWineAtIndex: (int) index
+-(FDCWineModel *) whiteWineAtIndex: (NSInteger) index
 {
     return [self.whiteWines objectAtIndex:index];
 }
 
--(FDCWineModel *) otherWineAtIndex: (int) index
+-(FDCWineModel *) otherWineAtIndex: (NSInteger) index
 {
     return [self.otherWines objectAtIndex:index];
 }

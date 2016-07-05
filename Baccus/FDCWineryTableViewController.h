@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FDCWineryModel.h"
 
+#define RED_WINE_SECTION    0
+#define WHITE_WINE_SECTION  1
+#define OTHER_WINE_SECTION  2
+
 @interface FDCWineryTableViewController : UITableViewController
 
 @property (strong, nonatomic) FDCWineryModel *model;

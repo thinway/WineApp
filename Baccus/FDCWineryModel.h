@@ -15,8 +15,8 @@
 @property (readonly, nonatomic) NSUInteger whiteWineCount;
 @property (readonly, nonatomic) NSUInteger otherWineCount;
 
--(FDCWineModel *) redWineAtIndex: (int) index;
--(FDCWineModel *) whiteWineAtIndex: (int) index;
--(FDCWineModel *) otherWineAtIndex: (int) index;
+-(FDCWineModel *) redWineAtIndex: (NSInteger) index;
+-(FDCWineModel *) whiteWineAtIndex: (NSInteger) index;
+-(FDCWineModel *) otherWineAtIndex: (NSInteger) index;
 
 @end

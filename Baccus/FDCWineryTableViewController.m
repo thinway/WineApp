@@ -7,6 +7,7 @@
 //
 
 #import "FDCWineryTableViewController.h"
+#import "FDCWineViewController.h"
 
 @interface FDCWineryTableViewController ()
 
@@ -42,25 +43,52 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if ( section == RED_WINE_SECTION ) {
+        return self.model.redWineCount;
+    }else if( section == WHITE_WINE_SECTION ) {
+        return self.model.whiteWineCount;
+    }else{
+        return self.model.otherWineCount;
+    }
 }
 
-/*
+
 // Un objeto NSIndexPath tiene dos propiedades: section y row
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    if ( cell == nil ) {
+        // No tiene ninguna celda disponible y hay que crearla a mano
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    // Averiguar de qué modelo (vino) nos están hablando
+    FDCWineModel *wine = nil;
+    
+    if ( indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }else if( indexPath.section == WHITE_WINE_SECTION ) {
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }else{
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    // Sincronizar celda (vista) y modelo (vino). Recordar que la celda es una vista
+    cell.imageView.image = wine.photo;
+    cell.textLabel.text = wine.name;
+    cell.detailTextLabel.text = wine.wineCompanyName;
+    
+    // La devolvemos
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -106,4 +134,25 @@
 }
 */
 
+#pragma mark - Table view delegate
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Suponemos que estamos dentro de un navigation controller
+    
+    // Averiguamos de qué vino se trata
+    FDCWineModel *wine = nil;
+    if ( indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }else if( indexPath.section == WHITE_WINE_SECTION ) {
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }else{
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    // Creamos un controlador para dicho vino
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:wine];
+    
+    // Hacemos un push al navigation controller dentro del cual estamos
+    [self.navigationController pushViewController:wineVC animated:YES];
+}
 @end
