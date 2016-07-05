@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32611D601D2C58A60034D300 /* FDCWineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32611D5F1D2C58A60034D300 /* FDCWineryModel.m */; };
+		32611D631D2C5F000034D300 /* FDCWineryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32611D621D2C5F000034D300 /* FDCWineryTableViewController.m */; };
 		329579F21D282068002F3423 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 329579F11D282068002F3423 /* main.m */; };
 		329579F51D282068002F3423 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 329579F41D282068002F3423 /* AppDelegate.m */; };
 		329579F71D282068002F3423 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329579F61D282068002F3423 /* Assets.xcassets */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		32611D5E1D2C58A60034D300 /* FDCWineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWineryModel.h; sourceTree = "<group>"; };
 		32611D5F1D2C58A60034D300 /* FDCWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWineryModel.m; sourceTree = "<group>"; };
+		32611D611D2C5F000034D300 /* FDCWineryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCWineryTableViewController.h; sourceTree = "<group>"; };
+		32611D621D2C5F000034D300 /* FDCWineryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCWineryTableViewController.m; sourceTree = "<group>"; };
 		329579ED1D282068002F3423 /* Baccus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baccus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329579F11D282068002F3423 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		329579F31D282068002F3423 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				32957A101D29995C002F3423 /* FDCWebViewController.h */,
 				32957A111D29995C002F3423 /* FDCWebViewController.m */,
 				32957A121D29995C002F3423 /* FDCWebViewController.xib */,
+				32611D611D2C5F000034D300 /* FDCWineryTableViewController.h */,
+				32611D621D2C5F000034D300 /* FDCWineryTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				329579F51D282068002F3423 /* AppDelegate.m in Sources */,
+				32611D631D2C5F000034D300 /* FDCWineryTableViewController.m in Sources */,
 				32957A081D28F7D5002F3423 /* FDCWineViewController.m in Sources */,
 				32957A031D284126002F3423 /* FDCWineModel.m in Sources */,
 				32611D601D2C58A60034D300 /* FDCWineryModel.m in Sources */,

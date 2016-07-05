@@ -20,16 +20,16 @@
 
 #pragma mark - Properties
 
--(int) redWineCount {
+-(NSUInteger) redWineCount {
     return [self.redWines count];
 }
 
--(int) whiteWineCount
+-(NSUInteger) whiteWineCount
 {
     return [self.whiteWines count];
 }
 
--(int) otherWineCount
+-(NSUInteger) otherWineCount
 {
     return [self.otherWines count];
 }
