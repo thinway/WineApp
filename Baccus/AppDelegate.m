@@ -22,15 +22,24 @@
     // Creamos el modelo
     FDCWineryModel *winery = [[FDCWineryModel alloc] init];
     
-    // Creamos el controlador de tabla
+    // Creamos los controladores
+        // Controlador de la tabla
     FDCWineryTableViewController *wineryVC = [[FDCWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
+        // Controlador de vino
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
     
-    // Creamos una navigation
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    // Creamos los navigation
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
+    // Creamos el combinador: SplitView
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    
+    // Metemos dentro del SplitView los dos controladores
+    splitVC.viewControllers = @[wineryNav, wineNav];
     
     // Asignamos el combinador como controlador raíz
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = splitVC;
     
     self.window.backgroundColor = [UIColor orangeColor];
     [self.window makeKeyAndVisible];
