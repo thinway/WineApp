@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FDCWineModel.h" // Cuidado con el autocompletado porque solo se importan los .h
+#import "FDCWineryTableViewController.h"
 
-@interface FDCWineViewController : UIViewController
+@interface FDCWineViewController : UIViewController <UISplitViewControllerDelegate, WineryTableViewControllerDelegate>
 
 // Los IBOutlet llevan el modificador weak
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

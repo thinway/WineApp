@@ -11,6 +11,8 @@
 
 @implementation FDCWineViewController
 
+#pragma mark - Init
+
 //  initWithModel sería nuestro inicializador designado y debe asegurarse de haber ejecutado el inicializador designado de su clase padre antes de inicializar sus propias variables de instancia.
 - (id) initWithModel:(FDCWineModel *)aModel
 {
@@ -132,9 +134,26 @@
     return repr;
 }
 
+#pragma mark - UISplitViewControllerDelegate
 
+- (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode
+{
+    if ( displayMode == UISplitViewControllerDisplayModePrimaryHidden ) {
+        self.navigationItem.rightBarButtonItem = svc.displayModeButtonItem;
+    }else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
 
+#pragma mark - WineryTableViewControllerDelegate
 
+- (void) wineryTableViewController:(FDCWineryTableViewController *)wineryVC didSelectWine:(FDCWineModel *)aWine
+{
+    self.model = aWine;
+    self.title = aWine.name;
+    
+    [self syncModelWithView];
+}
 
 
 

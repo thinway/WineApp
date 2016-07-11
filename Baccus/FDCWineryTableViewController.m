@@ -168,10 +168,9 @@
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
     
-    // Creamos un controlador para dicho vino
-    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:wine];
-    
-    // Hacemos un push al navigation controller dentro del cual estamos
-    [self.navigationController pushViewController:wineVC animated:YES];
+    // Mandamos mensaje a nuestro delegado
+    // Con esto la responsabilidad de la tabla ha terminado.
+    // Se le manda un mensaje al delegado y éste que se busque la vida.
+    [self.delegate wineryTableViewController:self didSelectWine:wine];
 }
 @end

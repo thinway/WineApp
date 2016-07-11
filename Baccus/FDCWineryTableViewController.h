@@ -13,11 +13,21 @@
 #define WHITE_WINE_SECTION  1
 #define OTHER_WINE_SECTION  2
 
+@class FDCWineryTableViewController;
+
+@protocol WineryTableViewControllerDelegate <NSObject>
+// El <NSObject> quiere decir que este protocolo también responde a los métodos delegados de NSObject
+- (void) wineryTableViewController: (FDCWineryTableViewController *) wineryVC didSelectWine: (FDCWineModel *) aWine;
+
+@end
+
 @interface FDCWineryTableViewController : UITableViewController
 
 @property (strong, nonatomic) FDCWineryModel *model;
+@property (weak, nonatomic) id<WineryTableViewControllerDelegate> delegate; // id<protocolo>: cualquier tipo de objeto que responda al protocolo
 
 -(id) initWithModel: (FDCWineryModel *) aModel
               style: (UITableViewStyle) aStyle; // UITableViewStyle no lleva * xq no es un objeto sino una constante
 
 @end
+

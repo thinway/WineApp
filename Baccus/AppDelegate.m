@@ -38,6 +38,10 @@
     // Metemos dentro del SplitView los dos controladores
     splitVC.viewControllers = @[wineryNav, wineNav];
     
+    // Asignamos delegados
+    splitVC.delegate = wineVC;
+    wineryVC.delegate = wineVC;
+    
     // Asignamos el combinador como controlador raíz
     self.window.rootViewController = splitVC;
     
