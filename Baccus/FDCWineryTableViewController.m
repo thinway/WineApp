@@ -172,5 +172,22 @@
     // Con esto la responsabilidad de la tabla ha terminado.
     // Se le manda un mensaje al delegado y éste que se busque la vida.
     [self.delegate wineryTableViewController:self didSelectWine:wine];
+    
+    // Los delegados y notificaciones no son excluyentes
+    // es decir, podemos enviar el mismo mensaje de distinta forma
+    // es lo que vamos a hacer.
+    // Para crear una notificación hay que seguir dos pasos:
+    //  1º - Crear la notificación
+    //  2º - Enviarla
+    
+    // Creamos la notificación
+    NSNotification *n = [NSNotification notificationWithName: NEW_WINE_NOTIFICATION_NAME
+                                                      object:self
+                                                    userInfo:@{WINE_KEY: wine}];
+    
+    // Enviamos la notificación creando una referencia al NotificationCenter
+    [[NSNotificationCenter defaultCenter] postNotification:n];
+    
+    
 }
 @end

@@ -7,13 +7,13 @@
 //
 
 #import "FDCWebViewController.h"
-
+#import "FDCWineryTableViewController.h"
 
 @implementation FDCWebViewController
 
 #pragma mark - Init
 
--(id) initWithModel: (FDCWineModel *) aModel
+- (id) initWithModel: (FDCWineModel *) aModel
 {
     if( self = [super initWithNibName:nil bundle:nil]) {
         _model = aModel;
@@ -23,11 +23,42 @@
     return self;
 }
 
--(void) viewWillAppear:(BOOL)animated
+- (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     [self displayURL: self.model.wineCompanyWeb];
+    
+    // Solo tiene sentido darse de alta cuando la vista se hace visible
+    // Alta en notificación
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    
+    [center addObserver: self                           // ¿Quién se va a suscribir a esta notificación?
+               selector: @selector(wineDidChange:)      // selector: Número que representa a un mensaje.
+                   name: NEW_WINE_NOTIFICATION_NAME     // Notificación a la que me quiero suscribir
+                 object: nil];                          // Objeto que genera la notificación. Si me da igual: nil
+    
+    
+}
+
+- (void) wineDidChange: (NSNotification *) notification
+{
+    NSDictionary *dict = [notification userInfo];
+    FDCWineModel *newWine = [dict objectForKey:WINE_KEY];
+    
+    // Actualizar el modelo
+    self.model = newWine;
+    
+    // Mostrar la nueva página
+    [self displayURL:self.model.wineCompanyWeb];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    // Baja en la notificación
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
