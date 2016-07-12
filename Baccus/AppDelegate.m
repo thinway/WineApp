@@ -26,7 +26,7 @@
         // Controlador de la tabla
     FDCWineryTableViewController *wineryVC = [[FDCWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
         // Controlador de vino
-    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:[wineryVC lastSelectedWine]];
     
     // Creamos los navigation
     UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];

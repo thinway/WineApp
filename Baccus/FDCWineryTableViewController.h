@@ -12,8 +12,14 @@
 #define RED_WINE_SECTION    0
 #define WHITE_WINE_SECTION  1
 #define OTHER_WINE_SECTION  2
+
+#define DID_SELECT_WINE_NOTIFICATION_NAME @"newWineSelected"
 #define NEW_WINE_NOTIFICATION_NAME @"newWine"
 #define WINE_KEY @"wine"
+
+#define SECTION_KEY @"section"
+#define ROW_KEY @"row"
+#define LAST_WINE_KEY @"lastWine"
 
 @class FDCWineryTableViewController;
 
@@ -31,5 +37,6 @@
 -(id) initWithModel: (FDCWineryModel *) aModel
               style: (UITableViewStyle) aStyle; // UITableViewStyle no lleva * xq no es un objeto sino una constante
 
+- (FDCWineModel *)lastSelectedWine;
 @end
 
