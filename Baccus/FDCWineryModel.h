@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "FDCWineModel.h"
 
+#define RED_WINE_KEY    @"Tinto"
+#define WHITE_WINE_KEY  @"Blanco"
+#define OTHER_WINE_KEY  @"Rosado"
+
 @interface FDCWineryModel : NSObject
 
 @property (readonly, nonatomic) NSUInteger redWineCount; // con readonly el compilador solo creará el getter, no creará el setter
