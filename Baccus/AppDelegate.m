@@ -15,22 +15,32 @@
 
 @implementation AppDelegate
 
+-(UIViewController *)rootViewControllerForPhoneWithModel:(FDCWineryModel *)aModel
+{
+    // Controlador
+    FDCWineryTableViewController *wineryVC = [[FDCWineryTableViewController alloc] initWithModel:aModel style:UITableViewStylePlain];
+    
+    // Combinador
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    
+    // Delegados
+    wineryVC.delegate = wineryVC;
+    
+    return wineryNav;
+}
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //Crea una windows que ocupe toda la pantalla
+-(UIViewController *)rootViewControllerForPadWithModel:(FDCWineryModel *)aModel
+{
+    // Controladores:
     
-    // Creamos el modelo
-    FDCWineryModel *winery = [[FDCWineryModel alloc] init];
-    
-    // Creamos los controladores
-        // Controlador de la tabla
-    FDCWineryTableViewController *wineryVC = [[FDCWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
-        // Controlador de vino
+    // Controlador de la tabla
+    FDCWineryTableViewController *wineryVC = [[FDCWineryTableViewController alloc] initWithModel:aModel style:UITableViewStylePlain];
+    // Controlador de vino
     FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel:[wineryVC lastSelectedWine]];
     
-    // Creamos los navigation
-    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    // Combinadores
     UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
     
     // Creamos el combinador: SplitView
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
@@ -42,14 +52,30 @@
     splitVC.delegate = wineVC;
     wineryVC.delegate = wineVC;
     
-    // Asignamos el combinador como controlador raíz
-    self.window.rootViewController = splitVC;
+    return splitVC;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //Crea una windows que ocupe toda la pantalla
     
-    self.window.backgroundColor = [UIColor orangeColor];
+    // Creamos el modelo
+    FDCWineryModel *winery = [[FDCWineryModel alloc] init];
+    
+    // Configuramos controladores, combinadores y delegados según
+    // el tipo de dispositivo
+    UIViewController *rootVC = nil;
+    if ( !IS_IPHONE ) {
+        // Tableta
+        rootVC = [self rootViewControllerForPadWithModel: winery];
+    }else{
+        rootVC = [self rootViewControllerForPhoneWithModel: winery];
+    }
+    
+    // Asignamos el combinador como controlador raíz
+    self.window.rootViewController = rootVC;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    // Añadido para que se vea la pantalla naranja
-    // Visto en los comentarios del vídeo.
-    // self.window.rootViewController = [UIViewController new];
     return YES;
 }
 

@@ -154,6 +154,7 @@
 */
 
 #pragma mark - Table view delegate
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Suponemos que estamos dentro de un navigation controller
@@ -193,6 +194,17 @@
     
 }
 
+#pragma mark - WineryTableViewControllerDelegate
+
+-(void)wineryTableViewController:(FDCWineryTableViewController *)wineryVC didSelectWine:(FDCWineModel *)aWine
+{
+    // Crear el controlador
+    FDCWineViewController *wineVC = [[FDCWineViewController alloc] initWithModel: aWine];
+    
+    // Hacer un push
+    [self.navigationController pushViewController:wineVC animated:YES];
+}
+
 #pragma mark - Utils
 
 - (FDCWineModel *)wineForIndexPath:(NSIndexPath *)indexPath
@@ -210,6 +222,7 @@
     
     return wine;
 }
+
 #pragma mark - NSUserDefaults
 
 - (NSDictionary *) setDefaults

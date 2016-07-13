@@ -1,0 +1,27 @@
+//
+//  Baccus-Prefix.pch
+//  Baccus
+//
+//  Created by Fran Delgado on 13/7/16.
+//  Copyright © 2016 Fran Delgado. All rights reserved.
+//
+
+#ifndef Baccus_Prefix_pch
+#define Baccus_Prefix_pch
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#ifndef __IPHONE_9_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKIT/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif /* Baccus_Prefix_pch */
+
+#define IS_IPHONE UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone

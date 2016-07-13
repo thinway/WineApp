@@ -29,7 +29,7 @@
 
 @end
 
-@interface FDCWineryTableViewController : UITableViewController
+@interface FDCWineryTableViewController : UITableViewController <WineryTableViewControllerDelegate>
 
 @property (strong, nonatomic) FDCWineryModel *model;
 @property (weak, nonatomic) id<WineryTableViewControllerDelegate> delegate; // id<protocolo>: cualquier tipo de objeto que responda al protocolo
